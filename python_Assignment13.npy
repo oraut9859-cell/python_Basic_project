@@ -1,0 +1,175 @@
+Q1. (Basic Array Creation)
+import numpy as np
+print("----- Q1: Basic Array Creation -----")
+# a) 1D array
+arr_1d = np.array([10, 20, 30, 40, 50])
+print("1D Array:", arr_1d)
+print("Shape:", arr_1d.shape)
+print("Data type:", arr_1d.dtype)
+# b) 2D array 3x3
+arr_2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print("\n2D Array:\n", arr_2d)
+print("Shape:",arr_2d.shape)
+print("Data type:", arr_2d.dtype)
+
+
+
+
+ Q2.(np.zeros() and np.ones())
+import numpy as np
+Print(“\n----- Q2: np.zeros() and np.ones() -----“)
+# a) 1D array of 8 zeros
+Zeros_1d = np.zeros(8) 
+ # 8 barobar ahe, np.zeros((8)) pan chalta
+Print(“a) 1D array of 8 zeros:”, zeros_1d)
+# b) 2D array shape (4, 4) filled with ones
+Ones_2d = np.ones((4, 4)) 
+ # Ithe (4, 4) tuple pahije
+Print(“\nb) 2D array (4x4) of ones:\n”, ones_2d)
+# c) 3x3 matrix of zeros
+Zeros_3x3 = np.zeros((3, 3)) 
+ # Ithe pn (3, 3) tuple pahije
+Print(“\nc) 3x3 matrix of zeros:\n”, zeros_3x3)
+
+
+import numpy as np
+Output Q3. (np.arange()) print("\n----- Q3: np.arange() -----")
+# a) Numbers from 0 to 20 step 1
+arr_a = np.arange(0, 21, 1)
+print("a) 0 to 20:", arr_a)
+# b) Even numbers from 10 to 50
+arr_b = np.arange(10, 51, 2)
+print("b) Even 10 to 50:", arr_b)
+# c) Numbers from 5 to 100 with step of 5
+arr_c = np.arange(5, 101, 5)
+print("c) 5 to 100 step 5:", arr_c)
+
+
+
+
+
+Q4. (np.linspace() Import numpy as np
+print("\n----- Q4: np.linspace() -----")
+# a) 10 equally spaced numbers between 0 and 5
+arr_lin1 = np.linspace(0, 5, 10)
+print("a) 10 numbers 0 to 5:", arr_lin1)
+print("Length:", len(arr_lin1))
+# b) 15 equally spaced numbers between -10 and 10
+arr_lin2 = np.linspace(-10, 10, 15)
+print("\nb) 15 numbers -10 to 10:", arr_lin2)
+print("Length:", len(arr_lin2))
+
+
+
+
+Q5.(Random Arrays) Import numpy as np
+print("\n----- Q5: Random Arrays -----")
+# a) 1D array of 10 random numbers between 0 and 1
+rand_1d = np.random.rand(10)
+print("a) 10 random numbers 0 to 1:\n", rand_1d)
+# b) 3x3 matrix of random numbers from standard normal distribution
+rand_normal = np.random.randn(3, 3)
+print("\nb) 3x3 random normal distribution:\n", rand_normal)
+# c) 2D array (4x5) of random integers between 10 and 50
+rand_int = np.random.randint(10, 51, size=(4, 5))
+print("\nc) 4x5 random integers 10 to 50:\n", rand_int)
+
+
+
+Q6.(Vectors and Basic Operations)
+import numpy as np
+print("\n----- Q6: Vectors and Basic Operations -----")
+v1 = np.array([2, 4, 6, 8])
+v2 = np.array([1, 3, 5, 7])
+print("Vector v1:", v1)
+print("Vector v2:", v2)
+print("Addition:", v1 + v2)
+print("Subtraction:", v1 - v2)
+print("Element-wise multiplication:", v1 * v2)
+print("Dot product:", np.dot(v1, v2)) 
+
+
+
+Q7. (Matrices and Operations)
+import numpy as np
+print("\n----- Q7: Matrices and Operations -----")
+A = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+B = np.array([[9, 8, 7], [6, 5, 4], [3, 2, 1]])
+print("Matrix A:\n", A)
+print("Matrix B:\n", B)
+print("\nMatrix Addition:\n", A + B)
+print("\nMatrix Multiplication @:\n", A @ B) # or np.dot(A, B)
+print("\nElement-wise Multiplication *:\n", A * B) 
+
+
+
+Q8.(Properties of Arrays)
+import numpy as np
+print("\n----- Q8: Properties of Arrays -----")
+matrix_4x4 = np.random.randint(1, 101, size=(4, 4))
+print("4x4 Random Matrix:\n", matrix_4x4)
+print("Shape:", matrix_4x4.shape)
+print("Dimension (ndim):", matrix_4x4.ndim)
+print("Total elements (size):", matrix_4x4.size)
+print("Data type:", matrix_4x4.dtype)
+print("Minimum value:", matrix_4x4.min())
+print("Maximum value:", matrix_4x4.max()) 
+
+
+
+
+
+ Q9.(Combined - Random + Reshape + Statistics)
+import numpy as np
+print("\n----- Q9: Random + Reshape + Statistics -----")
+arr_1d = np.random.randint(1, 51, 20)
+print("1D array of 20 random integers:", arr_1d)
+matrix_4x5 = arr_1d.reshape(4, 5)
+print("\nReshaped 4x5 Matrix:\n", matrix_4x5)
+print("Sum of matrix:", matrix_4x5.sum())
+print("Mean of matrix:", matrix_4x5.mean())
+print("Standard Deviation:", np.std(matrix_4x5))
+print("Maximum value in each row:", matrix_4x5.max(axis=1))
+
+
+
+Q10.(Mini Project - Simple Statistics Calculator)
+import numpy as np
+print("\n----- Q10: Simple Statistics Calculator -----")
+import numpy as np
+try:
+ # User kadun input ghene
+ n = int(input("How many random numbers to generate? "))
+ 
+ if n <= 0:
+ raise ValueError("Number should be greater than 0")
+ 
+ # 10 to 100 madhe n random numbers generate karne
+ random_nums = np.random.randint(10, 101, size=n)
+ 
+ print("\nGenerated 1D Array:", random_nums)
+ 
+ # Statistics calculate karne
+ print("\n----- Statistics -----")
+ print("Mean:", np.mean(random_nums))
+ print("Median:", np.median(random_nums))
+ print("Standard Deviation:", round(np.std(random_nums), 2))
+ print("Minimum:", np.min(random_nums))
+ print("Maximum:", np.max(random_nums)) # 2D array madhe reshape karne if possible
+ print("\n----- Reshape to 2D -----")
+ # n la perfect square madhe reshape karnyacha try
+ for i in range(int(n**0.5), 0, -1):
+ if n % i == 0:
+ rows = i
+ cols = n // i
+ reshaped_array = random_nums.reshape(rows, cols)
+ print(f"Reshaped into {rows}x{cols} 2D Array:\n", reshaped_array)
+ print("Row-wise Sum:", reshaped_array.sum(axis=1))
+ break
+ else:
+ print(f"Cannot reshape {n} elements into 2D array. Prime number.")
+ 
+except ValueError as e:
+ print("Invalid Input:", e)
+except Exception as e:
+ print("An error occurred:", e) Output
